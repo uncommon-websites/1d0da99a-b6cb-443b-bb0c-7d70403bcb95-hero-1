@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Defense Brief</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.97); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-scale-in {
+            opacity: 0;
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-0 { animation-delay: 0ms; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+
+        .text-balance { text-wrap: balance; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in-up, .animate-fade-in, .animate-scale-in {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#374151] text-white overflow-x-hidden selection:bg-[#2563eb] selection:text-white">
+
+    <div class="relative min-h-screen w-full flex flex-col">
+        
+        <!-- Background Image with Overlays -->
+        <div class="absolute inset-0 z-0 overflow-hidden bg-[#374151]">
+            <img 
+                src="https://placehold.co/1920x1080/374151/2563eb?text=+" 
+                alt="Defense tech operations background" 
+                class="w-full h-full object-cover object-center opacity-50 animate-scale-in delay-0"
+            />
+            <!-- Gradient overlay to ensure text readability -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#374151]/40 via-[#374151]/70 to-[#374151] animate-fade-in delay-100"></div>
+        </div>
+
+        <!-- Header / Navigation -->
+        <header class="relative z-10 w-full px-6 md:px-12 lg:px-16 py-8 flex justify-between items-center animate-fade-in delay-100">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-200" aria-label="Home">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-[#2563eb]">
+                    <path d="M12 22L3 8L12 2L21 8L12 22Z" fill="currentColor"/>
+                </svg>
+                <span class="text-xl font-bold tracking-tight">The Defense Brief</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="flex items-center gap-8 md:gap-12 text-sm md:text-base font-medium">
+                <a href="#" class="hover:text-[#2563eb] transition-colors duration-200">Archive</a>
+                <a href="#" class="bg-[#2563eb] text-white px-5 py-2 rounded font-semibold hover:bg-[#2563eb]/90 transition-colors duration-200 active:scale-97 transform">Subscribe Now</a>
+            </nav>
+        </header>
+
+        <!-- Main Hero Content -->
+        <main class="relative z-10 flex-grow flex flex-col justify-end pb-12 md:pb-16 lg:pb-24 px-6 md:px-12 lg:px-16">
+            <div class="w-full max-w-[1400px] mx-auto">
+                <p class="text-[#2563eb] font-semibold text-lg md:text-xl mb-4 animate-fade-in-up delay-100 tracking-wide uppercase">Under 5 Minutes A Day</p>
+                <h1 class="text-[3.5rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[100px] xl:text-[120px] leading-[0.9] font-bold tracking-[-0.03em] text-white animate-fade-in-up delay-200 text-balance mb-8">
+                    Defense Intel,<br />
+                    Decoded.
+                </h1>
+                <p class="text-gray-300 text-lg md:text-xl lg:text-2xl max-w-2xl font-medium leading-relaxed animate-fade-in-up delay-300 text-pretty">
+                    The Defense Brief delivers the most important defense tech and military news every day. Join thousands of defense professionals staying ahead.
+                </p>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>
